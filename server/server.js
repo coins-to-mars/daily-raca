@@ -4,7 +4,7 @@ require("./db/index.js");
 //Variables
 const express = require("express");
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4777;
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 

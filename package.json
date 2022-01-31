@@ -1,0 +1,7 @@
+{
+    "type": "module",
+    "dependencies": {
+        "axios": "^0.25.0",
+        "fetch": "^1.1.0"
+    }
+}
