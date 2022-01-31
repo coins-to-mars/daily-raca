@@ -9,6 +9,7 @@ const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 
 
+
 const path = require('path')
 app.use(express.static(path.join(__dirname, "public"))) // MIDDLEWARE DE CONFIGURACIÓN
 
@@ -18,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 //Middleware de sessions
-// require("./config/session.config")(app);
+require("./config/session.config")(app);
 
 
 app.use("/api", require("./routes/auth.js"));

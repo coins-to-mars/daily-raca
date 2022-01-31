@@ -3,6 +3,10 @@ const bcrypt = require("bcryptjs");
 const User = require("../models/User.model");
 
 
+//Middleware sessions
+const {isLoggedOut} = require("../middleware/route-guard")
+const {isLoggedIn} = require("../middleware/route-guard")
+
 //POST to create a new user
 router.post("/signup", async (req, res, next) => {
     const { username, password} = req.body;
@@ -28,7 +32,7 @@ router.post("/signup", async (req, res, next) => {
 
 //POST for login
 
-router.post("/login", async (req, res) => {
+router.post("/login", isLoggedOut, async (req, res) => {
     const {username, password } = req.body;
     if (!username || !password) {
         return res.status(400).json({ errorMessage: "Please provide your credentials" });
